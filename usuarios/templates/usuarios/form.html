@@ -1,0 +1,13 @@
+{% extends 'paginas/modelo-kgb.html' %} {% load static %} {% block conteudo %}
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <h3>Autenticação</h3>
+    <!-- <p class="lead">Preencha todos os campos obrigatórios.</p> -->
+    <hr />
+    <form action="" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="btn btn-secondary">Entrar</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
