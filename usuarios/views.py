@@ -1,9 +1,12 @@
 from django.shortcuts import render
 
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
 from django.contrib.auth.models import User, Group
-from .forms import UsuarioForm
+from .forms import UsuarioForm, UserDeleteForm
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from braces.views import GroupRequiredMixin
 from django.shortcuts import get_object_or_404
 from .models import Perfil
 
@@ -45,3 +48,25 @@ class PerfilUpdate(UpdateView):
     context['titulo'] = "Meus dados pessoais"
     context['botao'] = "Atualizar"
     return context
+
+
+
+############# DELETE ###########
+
+class PerfilDelete(DeleteView):
+  model = Perfil
+  form_class = UserDeleteForm
+  template_name = 'paginas/form-excluir.html'
+  success_url = reverse_lazy('listar-usuario-dados')
+
+
+############# LISTA ###########
+
+
+class UsuariosDadosList(GroupRequiredMixin, LoginRequiredMixin, ListView):
+  login_url = reverse_lazy('login')
+  group_required = [u"administrador", u"usuarios-filmes"]
+  model = Perfil
+  template_name = 'paginas/listas/usuarios-dados.html'
+
+

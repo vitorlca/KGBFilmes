@@ -1,0 +1,43 @@
+{% extends 'paginas/modelo-kgb.html' %} {% load static %} {% block conteudo %}
+<h3>Lista de Campos registrados</h3>
+<hr />
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Apelido</th>
+    <th>Nome Completo</th>
+    <th>CPF</th>
+    <th>Data de Nascimento</th>
+    <th>Telefone</th>
+    <th>Opções</th>
+  </tr>
+  {% for perfil in object_list %}
+  <tr>
+    <td>{{ perfil.pk }}</td>
+    <td>{{ perfil.apelido }}</td>
+    <td>{{ perfil.nome_completo }}</td>
+    <td>{{ perfil.cpf }}</td>
+    <td>{{ perfil.data_nascimento }}</td>
+    <td>{{ perfil.telefone }}</td>
+    <td>
+      <a
+        href="{% url 'atualizar-dados' %}"
+        class="btn btn-warning btn-sm"
+        title="Editar"
+        ><i class="fa fa-pencil" aria-hidden="true"></i
+      ></a>
+      <a
+        href="{% url 'excluir-usuario-dados' perfil.pk %}"
+        class="btn btn-danger btn-sm"
+        title="Excluir"
+        ><i class="fa fa-trash" aria-hidden="true"></i
+      ></a>
+    </td>
+  </tr>
+  {% empty %}
+  <tr>
+    <td colspan="3">Nenhum campo registrado.</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

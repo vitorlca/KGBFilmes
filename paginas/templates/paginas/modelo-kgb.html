@@ -18,8 +18,6 @@
         <!-- CSS adicional -->
         <link href="{% static 'css/ifpr.css' %}" rel="stylesheet">
     
-        <!-- Ícone na barra de abas -->
-        <!-- <link rel="shortcut icon" href="{% static 'img/favicon.png' %}"> -->
     
         <!-- Bloco destinado aos estilos para cada página -->
         {% block styles %}
@@ -68,16 +66,16 @@
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" 
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-plus-square" aria-hidden="true"></i>
-                                Cadastros
+                                Listas
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fa fa-building-o" aria-hidden="true">
-                                        Campo
+                                <a class="dropdown-item" href="{% url 'listar-usuario-dados' %}">
+                                    <i class="fa fa-user-o" aria-hidden="true">
+                                        Usuarios
                                     </i>
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <i class="fa fa-user-o" aria-hidden="true">
+                                    <i class="fa fa-building-o" aria-hidden="true">
                                         Atividade
                                     </i>
                                 </a>
@@ -159,7 +157,7 @@
 
         <!-- Bloco acima do rodapé com links -->
         {% block rodape-links %}
-        <div class="container-fluid bg-ifpr text-white p-3">
+        <div class="container-fluid bg-ifpr1 text-white p-3">
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
@@ -200,7 +198,8 @@
                     <img src="{% static 'img/ifpr.png' %}" height="48" class="float-left" alt="">
                     <p>
                         <span class="lead"><strong>KGBFilmes</strong></span><br>
-                        <span>Desenvolvido por Alexandre, Breno, Vítor</span>
+                        <span>Desenvolvido por Alexandre, Breno, Vítor</span><br>
+                        <img src="{% static 'img/logo-kgb.png' %}" height="100" class="mt-4" alt="">
                     </p>
                 </div>
                 <!-- <div class="col-md text-left">

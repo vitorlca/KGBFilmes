@@ -6,6 +6,10 @@ Cores do IFPR
   background-image: linear-gradient(#130591, black);
 }
 
+.bg-ifpr1 {
+  background-color: black;
+}
+
 .text-ifpr {
   color: #007834;
 }
