@@ -1,4 +1,6 @@
-{% extends 'paginas/modelo-kgb.html' %} {% load static %} {% block conteudo %}
+{% extends 'paginas/modelo-kgb.html' %} {% load static %} {% block titulo %}
+<title>Login</title>
+{% endblock %} {% block conteudo %}
 <div class="row">
   {% if request.user.is_authenticated %}
   <div class="col-md mx-auto">
