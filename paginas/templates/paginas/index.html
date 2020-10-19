@@ -3,11 +3,18 @@
 {% endblock %} {% block conteudo %}
 <h1>Página Inicial</h1>
 
+{% if request.user.is_authenticated %}
 {% if user.perfil.nome_completo %}
 <strong>
   Bem vindo ao sistema {{user.perfil.apelido}}. {% else %} Você precisa
-  completar ser cadastro. Acesse os
+  completar seu cadastro. Acesse os
   <a href="{% url 'atualizar-dados' %}">meus dados</a> para atualizar.</strong
+>
+{% endif %}
+{% else %}
+Você precisa
+  se cadastrar. Acesse o
+  <a href="{% url 'registrar' %}">registrar</a>.</strong
 >
 {% endif %}
 
