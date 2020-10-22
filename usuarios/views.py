@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.contrib.auth.models import User, Group
-from .forms import UsuarioForm, UserDeleteForm
+from .forms import UsuarioForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin

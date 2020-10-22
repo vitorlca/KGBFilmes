@@ -119,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -143,6 +143,3 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
-
-# Configurações de data
-DATE_INPUT_FORMATS = ['%d/%m/%Y'] 
