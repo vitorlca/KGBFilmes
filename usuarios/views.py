@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
@@ -9,6 +10,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
 from django.shortcuts import get_object_or_404
 from .models import Perfil
+
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -55,9 +59,12 @@ class PerfilUpdate(UpdateView):
 
 class PerfilDelete(DeleteView):
   model = Perfil
-  form_class = UserDeleteForm
+  # u = User.objects.get(id = 11)
+  # u.delete()
   template_name = 'paginas/form-excluir.html'
   success_url = reverse_lazy('listar-usuario-dados')
+
+
 
 
 ############# LISTA ###########
@@ -70,3 +77,23 @@ class UsuariosDadosList(GroupRequiredMixin, LoginRequiredMixin, ListView):
   template_name = 'paginas/listas/usuarios-dados.html'
 
 
+
+
+###############################
+
+# @login_required
+# def deleteuser(request):
+#     if request.method == 'POST':
+#         delete_form = UserDeleteForm(request.POST, instance=request.user)
+#         user = request.user
+#         user.delete()
+#         messages.info(request, 'Your account has been deleted.')
+#         return redirect('blog-home')
+#     else:
+#         delete_form = UserDeleteForm(instance=request.user)
+
+#     context = {
+#         'delete_form': delete_form
+#     }
+
+#     return render(request, 'usuario/delete_account.html', context)

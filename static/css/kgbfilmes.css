@@ -14,6 +14,10 @@ Cores do KGBFilmes
   color: grey;
 }
 
+.text-kgb-azul {
+  color: #130591;
+}
+
 .border-kgb {
   border-color: #130591;
 }

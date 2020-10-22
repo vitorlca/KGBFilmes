@@ -10,7 +10,7 @@ class UsuarioForm(UserCreationForm):
     fields = ['username', 'email', 'password1', 'password2']
 
 
-class UserDeleteForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = []   #Form has only submit button.  Empty "fields" list still necessary, though.
+# class UserDeleteForm(forms.ModelForm):
+#     class Meta:
+#         model = User
+#         fields = []   #Form has only submit button.  Empty "fields" list still necessary, though.
