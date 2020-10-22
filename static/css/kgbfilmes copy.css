@@ -1,100 +1,111 @@
-
 /* 
-Cores do IFPR 
+Cores do KGBFilmes 
 */
-.bg-ifpr {
-    background-color: #007834;
+.bg-kgb {
+  background-color: black;
+  background-image: linear-gradient(#130591, black);
 }
 
-.text-ifpr {
-    color: #007834;
+.bg-kgb1 {
+  background-color: black;
 }
 
-.border-ifpr {
-    border-color: #007834;
-}
-.bg-ifpr-escuro {
-    background-color: #315C23;
+.text-kgb {
+  color: grey;
 }
 
-.text-ifpr-escuro {
-    color: #315C23;
+.text-kgb-azul {
+  color: #130591;
 }
 
-.border-ifpr-escuro {
-    border-color: #315C23;
+.border-kgb {
+  border-color: #130591;
+}
+.bg-kgb-escuro {
+  background-color: black;
 }
 
+.text-kgb-escuro {
+  color: black;
+}
+
+.border-kgb-escuro {
+  border-color: black;
+}
 
 /* 
 Tamanhos diferentes para fontes 
 */
 .font-75 {
-    font-size: 75%;
+  font-size: 75%;
 }
 
 .font-115 {
-    font-size: 115%;
+  font-size: 115%;
 }
 
 .font-125 {
-    font-size: 125%;
+  font-size: 125%;
 }
 
 .font-150 {
-    font-size: 150%;
+  font-size: 150%;
 }
 
 .font-175 {
-    font-size: 175%;
+  font-size: 175%;
 }
-
 
 /* 
 Formatação do DataTable 
 */
-table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child::before,
-table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child::before {
-    top: 15px !important;
+table.dataTable.dtr-inline.collapsed
+  > tbody
+  > tr[role='row']
+  > td:first-child::before,
+table.dataTable.dtr-inline.collapsed
+  > tbody
+  > tr[role='row']
+  > th:first-child::before {
+  top: 15px !important;
 }
-
 
 /* 
 Personalização da Barra de menu pra ficar igual do site 
 */
 .navbar {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
-.navbar .navbar-brand{
-    padding-left: 10px;
+.navbar .navbar-brand {
+  padding-left: 10px;
 }
 
-.navbar a.nav-link{
-    color: white !important;
+.navbar a.nav-link {
+  color: white !important;
 }
 
-.navbar .nav-item{
-    padding: 3px 5px;
+.navbar .nav-item {
+  padding: 3px 5px;
 }
 
-.navbar .nav-item:hover{
-    background-color: #315C23;
+.navbar .nav-item:hover {
+  background-color: #315c23;
 }
-
 
 /* 
 Alerta na validação dos formulários (login com senha errada, por exemplo) 
 */
-.alert dl, .alert ol, .alert ul {
-    margin-top: 0;
-    margin-bottom: 0;
+.alert dl,
+.alert ol,
+.alert ul {
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
 
 /*
 Largura máxima das tabelas para não ficar mal formatada
 */
-table td{
-    max-width: 500px;
+table td {
+  max-width: 500px;
 }
