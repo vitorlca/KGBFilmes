@@ -15,8 +15,6 @@ from .models import Perfil
 
 class UsuarioCreate(CreateView):
   template_name = "paginas/form.html"
-  # model = User
-  # fields = ['username', 'email', 'password']
   form_class = UsuarioForm
   success_url = reverse_lazy('login')
 
@@ -69,28 +67,7 @@ class PerfilDelete(DeleteView):
 
 class UsuariosDadosList(GroupRequiredMixin, LoginRequiredMixin, ListView):
   login_url = reverse_lazy('login')
-  group_required = [u"administrador", u"usuarios-filmes"]
+  group_required = u"administrador"
   model = Perfil
   template_name = 'paginas/listas/usuarios-dados.html'
 
-
-
-
-###############################
-
-# @login_required
-# def deleteuser(request):
-#     if request.method == 'POST':
-#         delete_form = UserDeleteForm(request.POST, instance=request.user)
-#         user = request.user
-#         user.delete()
-#         messages.info(request, 'Your account has been deleted.')
-#         return redirect('blog-home')
-#     else:
-#         delete_form = UserDeleteForm(instance=request.user)
-
-#     context = {
-#         'delete_form': delete_form
-#     }
-
-#     return render(request, 'usuario/delete_account.html', context)

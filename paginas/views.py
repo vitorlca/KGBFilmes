@@ -11,6 +11,6 @@ class IndexView(TemplateView):
   # atributo abaixo para definir um template a ser renderizado
   template_name = 'paginas/index.html'
 
-# class SobreView(TemplateView):
-#   template_name = 'paginas/sobre.html'
+class SobreView(TemplateView):
+  template_name = 'paginas/sobre.html'
 
