@@ -26,6 +26,7 @@
         href="{% url 'atualizar-dados' %}"
         class="btn btn-warning btn-sm"
         title="Editar"
+        hidden
         ><i class="fa fa-pencil" aria-hidden="true"></i
       ></a>
       <a
@@ -42,4 +43,11 @@
   </tr>
   {% endfor %}
 </table>
+<hr />
+<h3>Área de Upload Filmes</h3>
+<p>
+  <a href="{% url 'image_upload' %}" class="btn btn-secondary"
+    >Upload de Imagens</a
+  >
+</p>
 {% endblock %} {% block rodape %} {% endblock %}

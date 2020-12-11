@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'paginas.apps.PaginasConfig',
     'usuarios.apps.UsuariosConfig',
+    'fileUpload.apps.FileuploadConfig',
     'crispy_forms',
 ]
 
@@ -89,7 +90,7 @@ WSGI_APPLICATION = 'KGBFilmes.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'kgbfilmes_db',
+        'NAME' : 'kgbfilmes',
         'USER' : 'root',
         'PASSWORD' : 'root',
         'HOST' : 'localhost',
@@ -143,3 +144,8 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
+
+
+# Configuração de Upload de imagens
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

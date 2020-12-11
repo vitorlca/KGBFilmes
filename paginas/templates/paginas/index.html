@@ -6,7 +6,7 @@
 {% if request.user.is_authenticated %}
 {% if user.perfil.nome_completo %}
 <strong>
-  Bem vindo ao sistema {{user.perfil.apelido}}. {% else %} Você precisa
+  Bem vindo, {{user.perfil.apelido}}. {% else %} Você precisa
   completar seu cadastro. Acesse os
   <a href="{% url 'atualizar-dados' %}">meus dados</a> para atualizar.</strong
 >
@@ -23,26 +23,38 @@ Você precisa
   <a href="#" class="control_prev"><i class="fa fa-arrow-circle-left" style="font-size:36px;color:grey" aria-hidden="true"></i></a>
   <ul>
     <li>
-      <a href="#" target="_blank">
-        <img src="{% static 'img/img1.jpg' %}" />
+      <a href="{% url 'image_list' %}" target="_blank">
+        <img src="{% static 'img/mulan.jpg' %}" class="img-fluid" />
       </a>
     </li>
     <li>
-      <a href="#" target="_blank">
+      <a href="{% url 'image_list' %}" target="_blank">
         <img src="{% static 'img/img2.jpg' %}" />
       </a>
     </li>
     <li>
-      <a href="#" target="_blank">
-        <img src="{% static 'img/img3.jpg' %}" />
+      <a href="{% url 'image_list' %}" target="_blank">
+        <img src="{% static 'img/bastardos_inglorios3.jpg' %}" class="img-fluid" />
       </a>
     </li>
     <li>
-      <a href="#" target="_blank">
-        <img src="{% static 'img/img4.jpg' %}" />
+      <a href="{% url 'image_list' %}" target="_blank">
+        <img src="{% static 'img/pantera_negra3.jpg' %}" class="img-fluid" />
       </a>
     </li>
   </ul>
+  <!-- {% for image in images %}
+  <ul>
+    <li>
+      {% if image.name %}
+      <a href="#" target="_blank"></a>
+      <img
+        src="{{ image.store.url }}"
+      />
+      {% endif %}
+    </li>
+  </ul>
+  {% endfor %} -->
 </div>
 <script>
   $(function () {

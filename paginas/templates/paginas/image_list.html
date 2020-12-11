@@ -1,0 +1,46 @@
+{% extends 'paginas/modelo-kgb.html' %} {% load static %} {% block titulo %}
+<title>Lista de Imagem</title>
+{% endblock %} {% block conteudo %} {% if request.user.is_authenticated %}
+<h2>Filmes</h2>
+
+<div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Filmes</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for image in images %}
+      <tr>
+        <td>
+          {% if image.titulo %}
+          <img
+            src="{{ image.image.url }}"
+            class="mx-auto d-block"
+            alt="{{
+            image.titulo }}"
+            style="width: 200px"
+          />
+          {% endif %}
+        </td>
+        <td>
+          Titulo: {{ image.titulo }} <br />
+          <hr />
+          Diretor: {{ image.diretor }} <br />
+          <hr />
+          Gênero: {{ image.genero }} <br />
+          <hr />
+          Classificação: {{ image.classificacao }} <br />
+          <hr />
+          Ano de Produção: {{ image.ano_producao }} <br />
+          <hr />
+          Países de Origem: {{ image.pais_de_origem }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %} {% endblock %}

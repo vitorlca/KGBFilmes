@@ -116,6 +116,10 @@ html {
   border-top: 5px solid #fff;
   background: #f9f9f9;
 }
+/* #slider img {
+  display: flex;
+  width: 100% !important;
+} */
 #slider {
   position: relative;
   overflow: hidden;
